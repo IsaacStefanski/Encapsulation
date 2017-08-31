@@ -18,9 +18,16 @@ public class Employee {
     private boolean metWithHr;
     private boolean metDeptStaff;
     private boolean reviewedDeptPolicies;
-    private boolean movedIn;
+    private boolean movedIn = false;
     private String cubeId;
     private Date orientationDate;
+    
+    //Constructor
+    public Employee(String firstName, String lastName, String ssn){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.ssn = ssn;
+    }
 
     //Getters
     public String getFirstName() {
