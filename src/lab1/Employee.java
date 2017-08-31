@@ -22,6 +22,8 @@ public class Employee {
     private boolean metDeptStaff = false;
     private boolean reviewedDeptPolicies = false;
     private boolean movedIn = false;
+    //For validation of names (A-Z and a-z only)
+    private String regex = "^[a-zA-Z]+$";
     
     //Constructor
     public Employee(String firstName, String lastName, String ssn){
@@ -69,14 +71,18 @@ public class Employee {
 
     //Setters
     public void setFirstName(String firstName) {
-        if(!firstName.isEmpty()){
+        if(firstName.matches(regex)){
             this.firstName = firstName;
+        } else{
+            throw new IllegalArgumentException("First name should only include letters");
         }
     }
 
     public void setLastName(String lastName) {
-        if(!lastName.isEmpty()){
+        if(lastName.matches(regex)){
             this.lastName = lastName;
+        } else{
+            throw new IllegalArgumentException("Last name should only include letters");
         }
     }
 

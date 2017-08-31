@@ -29,6 +29,8 @@ public class Employee {
     private boolean movedIn;
     private String cubeId;
     private Date orientationDate;
+    private String regex = "^[a-zA-Z]+$";
+
 
     public Employee(String firstName, String lastName, String ssn) {
         this.firstName = firstName;
@@ -55,28 +57,34 @@ public class Employee {
     // Assume this must be performed first, and assume that an employee
     // would only do this once, upon being hired.
     private void meetWithHrForBenefitAndSalryInfo() {
-        metWithHr = true;
+        if(!metWithHr){
+            metWithHr = true;
+        }
     }
 
-    // Assume this must be performed first, and assume that an employee
+    // Assume this must be performed second, and assume that an employee
     // would only do this once, upon being hired.:
     private void meetDepartmentStaff() {
-        metDeptStaff = true;
+        if(!metDeptStaff){
+            metDeptStaff = true;
+        }
     }
 
     // Assume this must be performed third. And assume that because department
     // policies may change that this method may need to be called 
     // independently from other classes.
-    private void reviewDeptPolicies() {
+    public void reviewDeptPolicies() {
         reviewedDeptPolicies = true;
     }
 
-    // Assume this must be performed 4th. And assume that because employees
+    // Assume this must be performed fourth. And assume that because employees
     // sometimes change office locations that this method may need to be called 
     // independently from other classes.
-    private void moveIntoCubicle(String cubeId) {
-        this.cubeId = cubeId;
-        this.movedIn = true;
+    public void moveIntoCubicle(String cubeId) {
+        if(cubeId != null && movedIn == false){
+            this.cubeId = cubeId;
+            this.movedIn = true;
+        }
     }
 
     public String getFirstName() {
@@ -87,7 +95,11 @@ public class Employee {
     // allowed through validation.
     
     public void setFirstName(String firstName) {
-       this.firstName = firstName;
+        if(firstName.matches(regex)){
+            this.firstName = firstName;
+        } else{
+            throw new IllegalArgumentException("First name should only include letters");
+        }
     }
 
     public String getLastName() {
@@ -95,7 +107,11 @@ public class Employee {
     }
 
     public void setLastName(String lastName) {
-       this.lastName = lastName;
+        if(lastName.matches(regex)){
+            this.lastName = lastName;
+        } else{
+            throw new IllegalArgumentException("Last name should only include letters");
+        }
     }
 
     public String getSsn() {
@@ -103,7 +119,11 @@ public class Employee {
     }
 
     public void setSsn(String ssn) {
-        this.ssn = ssn;
+        if(!ssn.isEmpty() && ssn.length()==11){
+            this.ssn = ssn;
+        } else{
+            throw new IllegalArgumentException("SSN should be nine digits separated by dashes (XXX-XX-XXXX)");
+        }
     }
 
     public boolean isMetWithHr() {
