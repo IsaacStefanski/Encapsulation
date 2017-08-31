@@ -35,15 +35,19 @@ public class Employee {
         this.lastName = lastName;
         this.ssn = ssn;
     }
+    
+    //Set orientation date
+    public String getOrientationDate(){
+        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyy");
+        String fmtDate = sdf.format(orientationDate);
+        return fmtDate;
+    }
 
     // Assume this must be performed first, and assume that an employee
     // would only do this once, upon being hired.
     public void meetWithHrForBenefitAndSalryInfo() {
-        metWithHr = true;
-        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-        String fmtDate = sdf.format(orientationDate);        
-        System.out.println(firstName + " " + lastName + " met with Hr on "
-            + fmtDate);
+        metWithHr = true;        
+        System.out.println(firstName + " " + lastName + " met with Hr on " + getOrientationDate());
     }
 
     // Assume this must be performed first, and assume that an employee
