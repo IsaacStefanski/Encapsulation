@@ -68,15 +68,23 @@ public class Employee {
 
     //Setters
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        if(!firstName.isEmpty()){
+            this.firstName = firstName;
+        }
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        if(!lastName.isEmpty()){
+            this.lastName = lastName;
+        }
     }
 
     public void setSsn(String ssn) {
-        this.ssn = ssn;
+        if(!ssn.isEmpty() && ssn.length()==11){
+            this.ssn = ssn;
+        } else{
+            throw new IllegalArgumentException("SSN should be nine digits separated by dashes (XXX-XX-XXXX)");
+        }
     }
 
     public void setMetWithHr(boolean metWithHr) {
@@ -102,7 +110,4 @@ public class Employee {
     public void setOrientationDate(Date orientationDate) {
         this.orientationDate = orientationDate;
     }
-    
-    
-
 }
