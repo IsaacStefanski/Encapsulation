@@ -38,12 +38,6 @@ public class Employee {
         this.ssn = ssn;
     }
     
-    //Get formatted date
-    private String getFormattedDate() {
-        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-        return sdf.format(orientationDate);
-    }
-    
     //Orientation day activities
     //Meeting with HR, being introduced to everyone, going over policies, and getting a cubicle only happen once
     public void doAtOrientation(String cubeId) {
