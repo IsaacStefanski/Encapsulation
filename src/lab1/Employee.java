@@ -14,13 +14,14 @@ import java.util.Date;
 public class Employee {
     private String firstName;
     private String lastName;
-    private String ssn;
-    private boolean metWithHr;
-    private boolean metDeptStaff;
-    private boolean reviewedDeptPolicies;
-    private boolean movedIn = false;
+    private String ssn;    
     private String cubeId;
     private Date orientationDate;
+    //A new employee would not have gone to orientation yet, so the associated booleans would default to false
+    private boolean metWithHr = false;
+    private boolean metDeptStaff = false;
+    private boolean reviewedDeptPolicies = false;
+    private boolean movedIn = false;
     
     //Constructor
     public Employee(String firstName, String lastName, String ssn){
