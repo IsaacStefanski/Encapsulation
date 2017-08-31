@@ -36,11 +36,20 @@ public class Employee {
         this.ssn = ssn;
     }
     
-    //Set orientation date
-    public String getOrientationDate(){
-        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyy");
-        String fmtDate = sdf.format(orientationDate);
-        return fmtDate;
+    //Get formatted date
+    private String getFormattedDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
+        return sdf.format(orientationDate);
+    }
+    
+    //Orientation day activities
+    //Meeting with HR, being introduced to everyone, going over policies, and getting a cubicle only happen once
+    public void doAtOrientation(String cubeId) {
+        orientationDate = new Date();
+        meetWithHrForBenefitAndSalryInfo();
+        meetDepartmentStaff();
+        reviewDeptPolicies();
+        moveIntoCubicle(cubeId);
     }
 
     // Assume this must be performed first, and assume that an employee
