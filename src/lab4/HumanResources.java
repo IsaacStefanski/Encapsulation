@@ -10,7 +10,13 @@ package lab4;
  * @author Isaac
  */
 public class HumanResources {
+    //hire an employee
     public void hireEmployee(String firstName, String lastName, String ssn) {
-        Employee e = new Employee(firstName,lastName,ssn);
+        Employee e = new Employee(firstName, lastName, ssn);
+    }
+    
+    //run orientation
+    public void employeeOrientation(Employee e) {
+        e.doFirstTimeOrientation("A101");
     }
 }
