@@ -10,5 +10,7 @@ package lab4;
  * @author Isaac
  */
 public class HumanResources {
-    
+    public void hireEmployee(String firstName, String lastName, String ssn) {
+        Employee e = new Employee(firstName,lastName,ssn);
+    }
 }
