@@ -10,5 +10,17 @@ package lab4;
  * @author Isaac
  */
 public class Business {
-    
+    private HumanResources hr;    
+
+    public Business() {
+        hr = new HumanResources();
+    }
+
+    public HumanResources getHr() {
+        return hr;
+    }
+
+    public void setHr(HumanResources hr) {
+        this.hr = hr;
+    }
 }
