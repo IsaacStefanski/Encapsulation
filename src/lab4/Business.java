@@ -23,4 +23,8 @@ public class Business {
     public void setHr(HumanResources hr) {
         this.hr = hr;
     }
+    
+    public void hireEmployee(String firstName, String lastName, String ssn) {
+        hr.hireEmployee(firstName, lastName, ssn);
+    }
 }
