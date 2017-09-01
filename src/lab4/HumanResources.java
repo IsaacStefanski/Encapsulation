@@ -5,14 +5,24 @@
  */
 package lab4;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Isaac
  */
 public class HumanResources {
+    //HR keeps a list of the employees
+    private ArrayList<Employee> employees;
+    
+    public HumanResources(){
+        employees = new ArrayList();
+    }
+    
     //hire an employee
     public void hireEmployee(String firstName, String lastName, String ssn) {
         Employee e = new Employee(firstName, lastName, ssn);
+        employees.add(e);
     }
     
     //run orientation
