@@ -80,6 +80,8 @@ public class Employee {
         meetDepartmentStaff();
         reviewDeptPolicies();
         moveIntoCubicle(cubeId);
+        output.simpleOutput(firstName + " " + lastName + " completed orientation " +
+                "on " + orientationDate);
     }
 
     // The following methods may be public or private, depending on whether
