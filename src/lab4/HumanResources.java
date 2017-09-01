@@ -30,4 +30,21 @@ public class HumanResources {
     public void employeeOrientation(Employee e) {
         e.doFirstTimeOrientation("A101");
     }
+    
+    //reporting
+    public void outputReport(String ssn) {
+        Employee e = null;
+        
+        for(int i=0; i<employees.size(); i++){
+            if(employees.get(i).getSsn().equals(ssn)){
+                e = employees.get(i);
+                break;
+            }
+        }
+
+        if(e.isMetWithHr() && e.isMetDeptStaff()
+           && e.isReviewedDeptPolicies() && e.isMovedIn()) {            
+            e.getReportService().outputReport();            
+        }
+    }
 }
