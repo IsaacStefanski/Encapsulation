@@ -23,6 +23,7 @@ public class HumanResources {
     public void hireEmployee(String firstName, String lastName, String ssn) {
         Employee e = new Employee(firstName, lastName, ssn);
         employees.add(e);
+        employeeOrientation(e);
     }
     
     //run orientation
