@@ -26,5 +26,6 @@ public class Business {
     
     public void hireEmployee(String firstName, String lastName, String ssn) {
         hr.hireEmployee(firstName, lastName, ssn);
+        hr.outputReport(ssn);
     }
 }
