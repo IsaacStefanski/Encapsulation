@@ -14,7 +14,6 @@ public class Startup {
 
         Employee employee = new Employee("Peter","Piper","333-33-3333");
         
-        employee.doFirstTimeOrientation("A101");
         employee.getReportService().outputReport();
     }
     
