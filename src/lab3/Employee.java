@@ -92,9 +92,7 @@ public class Employee {
     // method should not be public. It should only be available to this class
     // and should only be called as part of the larger task of:
     private void meetWithHrForBenefitAndSalryInfo() {
-        metWithHr = true;        
-        output.simpleOutput(firstName + " " + lastName + " met with Hr on "
-            + getFormattedDate());
+        metWithHr = true; 
     }
 
     // Assume this must be performed first, and assume that an employee
@@ -103,9 +101,7 @@ public class Employee {
     // and should only be called as part of the larger task of:
     // doFirtTimeOrientation()
     private void meetDepartmentStaff() {
-        metDeptStaff = true;        
-        output.simpleOutput(firstName + " " + lastName + " met with Dept. Staff on "
-            + getFormattedDate());
+        metDeptStaff = true;
     }
 
     // Assume this must be performed third. And assume that because department
