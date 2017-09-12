@@ -91,7 +91,7 @@ public class Employee {
     // would only do this once, upon being hired. If that were true, this
     // method should not be public. It should only be available to this class
     // and should only be called as part of the larger task of:
-    private void meetWithHrForBenefitAndSalryInfo() {
+    public void meetWithHrForBenefitAndSalryInfo() {
         metWithHr = true; 
     }
 
@@ -100,7 +100,7 @@ public class Employee {
     // method should not be public. It should only be available to this class
     // and should only be called as part of the larger task of:
     // doFirtTimeOrientation()
-    private void meetDepartmentStaff() {
+    public void meetDepartmentStaff() {
         metDeptStaff = true;
     }
 
