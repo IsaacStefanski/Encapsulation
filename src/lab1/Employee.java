@@ -17,11 +17,10 @@ public class Employee {
     private String ssn;    
     private String cubeId;
     private Date orientationDate;
-    //A new employee would not have gone to orientation yet, so the associated booleans would default to false
-    private boolean metWithHr = false;
-    private boolean metDeptStaff = false;
-    private boolean reviewedDeptPolicies = false;
-    private boolean movedIn = false;
+    private boolean metWithHr;
+    private boolean metDeptStaff;
+    private boolean reviewedDeptPolicies;
+    private boolean movedIn;
     //For validation of names (A-Z and a-z only)
     private String regex = "^[a-zA-Z]+$";
     
@@ -71,7 +70,7 @@ public class Employee {
 
     //Setters
     public void setFirstName(String firstName) {
-        if(firstName.matches(regex)){
+        if(firstName != null && firstName.matches(regex)){
             this.firstName = firstName;
         } else{
             throw new IllegalArgumentException("First name should only include letters");
@@ -79,7 +78,7 @@ public class Employee {
     }
 
     public void setLastName(String lastName) {
-        if(lastName.matches(regex)){
+        if(lastName != null && lastName.matches(regex)){
             this.lastName = lastName;
         } else{
             throw new IllegalArgumentException("Last name should only include letters");
@@ -87,7 +86,7 @@ public class Employee {
     }
 
     public void setSsn(String ssn) {
-        if(!ssn.isEmpty() && ssn.length()==11){
+        if(ssn != null && ssn.length()==11){
             this.ssn = ssn;
         } else{
             throw new IllegalArgumentException("SSN should be nine digits separated by dashes (XXX-XX-XXXX)");
