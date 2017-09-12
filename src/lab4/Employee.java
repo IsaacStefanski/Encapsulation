@@ -97,7 +97,7 @@ public class Employee {
     // method should not be public. It should only be available to this class
     // and should only be called as part of the larger task of:
     // doFirtTimeOrientation()
-    private void meetWithHrForBenefitAndSalryInfo() {
+    public void meetWithHrForBenefitAndSalryInfo() {
         metWithHr = true;
         reportService.addData(firstName + " " + lastName + " met with Hr on "
             + getFormattedDate() + CRLF);
@@ -108,7 +108,7 @@ public class Employee {
     // method should not be public. It should only be available to this class
     // and should only be called as part of the larger task of:
     // doFirtTimeOrientation()
-    private void meetDepartmentStaff() {
+    public void meetDepartmentStaff() {
         metDeptStaff = true;
         reportService.addData(firstName + " " + lastName + " met with Dept. Staff on "
             + getFormattedDate() + CRLF);
