@@ -38,7 +38,7 @@ public class Employee {
         this.ssn = ssn;
     }
     
-    public String getDate (Date date){
+    public String getFormattedDate (Date date){
         DateUtilities dateFormatter = new DateUtilities();
         return dateFormatter.getFormattedDate(orientationDate);
     }
@@ -55,7 +55,7 @@ public class Employee {
 
     // Assume this must be performed first, and assume that an employee
     // would only do this once, upon being hired.
-    private void meetWithHrForBenefitAndSalryInfo() {
+    public void meetWithHrForBenefitAndSalryInfo() {
         if(!metWithHr){
             metWithHr = true;
         }
@@ -63,7 +63,7 @@ public class Employee {
 
     // Assume this must be performed second, and assume that an employee
     // would only do this once, upon being hired.:
-    private void meetDepartmentStaff() {
+    public void meetDepartmentStaff() {
         if(!metDeptStaff){
             metDeptStaff = true;
         }
